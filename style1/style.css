@@ -1,0 +1,102 @@
+html {
+    font-family: Nunito;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: visible;
+}
+
+li.menuItem, li.dropdown {
+    float: left;
+}
+
+li.menuItem a, .dropdown a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.menuItem a.ativo {
+    background-color: #3498DB;
+}
+
+li.menuItem a:hover:not(.ativo):not(.dropdown-conteudo-a), .dropdown:hover .dropbtn {
+    background-color: #0f0f0f;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-conteudo {
+    visibility: hidden;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    opacity: 0;
+    -webkit-transition: all 0.28s ease-in-out;
+    -moz-transition: all 0.28s ease-in-out;
+    -ms-transition: all 0.28s ease-in-out;
+    -o-transition: all 0.28s ease-in-out;
+}
+
+.dropdown-conteudo a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-conteudo a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-conteudo {
+    visibility: visible;
+    opacity: 1;
+}
+
+.obrigatorio {
+    color: red;
+}
+
+#cadastro {
+    text-align: center;
+}
+
+#tabela-cadastro {
+    width: 40%;
+    margin-top: 40px;
+    margin-left: 30%;
+}
+
+#tabela-cadastro th {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.linha-completa {
+    width: 100%;
+}
+
+.linha-dividida {
+    width: 98%;
+}
+
+label {
+    font-weight: bold;
+}
+
