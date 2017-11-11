@@ -6,13 +6,13 @@ html {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background-color: #333;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     overflow: visible;
+    z-index: 3;
 }
 
 li.menuItem, li.dropdown {
@@ -68,6 +68,14 @@ li.dropdown {
     opacity: 1;
 }
 
+input[type='radio'] {
+    cursor: pointer;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
 .obrigatorio {
     color: red;
 }
@@ -78,25 +86,40 @@ li.dropdown {
 
 #tabela-cadastro {
     width: 40%;
-    margin-top: 40px;
+    margin-top: 65px;
     margin-left: 30%;
+    border: solid rgb(121, 136, 151) 1px;
 }
 
 #tabela-cadastro th {
-    padding-top: 30px;
+    padding-top: 10px;
     padding-bottom: 20px;
     font-size: 18px;
+    text-align: center;
+    border-top: solid rgb(121, 136, 151) 1px;
 }
 
 .linha-completa {
-    width: 100%;
+    margin-left: 0.5%;
+    width: 98%;
+    font-size: 14px!important;
+    padding: 5px!important;
+    height: 37px!important;
 }
 
 .linha-dividida {
+    margin-left: 0.5%;
     width: 98%;
+    font-size: 14px!important;
+    padding: 5px!important;
+    height: 37px!important;
 }
 
 label {
     font-weight: bold;
 }
 
+input[type="email"], input[type="text"], input[type="date"], select {
+    border-radius: 5px!important;
+    margin-bottom: 10px!important;
+}
