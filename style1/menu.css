@@ -1,7 +1,3 @@
-html {
-    font-family: Nunito;
-}
-
 .menu {
     list-style-type: none;
     margin: 0;
@@ -66,60 +62,4 @@ li.dropdown {
 .dropdown:hover .dropdown-conteudo {
     visibility: visible;
     opacity: 1;
-}
-
-input[type='radio'] {
-    cursor: pointer;
-}
-
-.pointer {
-    cursor: pointer;
-}
-
-.obrigatorio {
-    color: red;
-}
-
-#cadastro {
-    text-align: center;
-}
-
-#tabela-cadastro {
-    width: 40%;
-    margin-top: 65px;
-    margin-left: 30%;
-    border: solid rgb(121, 136, 151) 1px;
-}
-
-#tabela-cadastro th {
-    padding-top: 10px;
-    padding-bottom: 20px;
-    font-size: 18px;
-    text-align: center;
-    border-top: solid rgb(121, 136, 151) 1px;
-}
-
-.linha-completa {
-    margin-left: 0.5%;
-    width: 98%;
-    font-size: 14px!important;
-    padding: 5px!important;
-    height: 37px!important;
-}
-
-.linha-dividida {
-    margin-left: 0.5%;
-    width: 98%;
-    font-size: 14px!important;
-    padding: 5px!important;
-    height: 37px!important;
-}
-
-label {
-    font-weight: bold;
-}
-
-input[type="email"], input[type="text"], input[type="date"], select {
-    border-radius: 5px!important;
-    margin-bottom: 10px!important;
 }
