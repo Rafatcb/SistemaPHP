@@ -8,7 +8,7 @@
 
 
 
-        <link id="css" rel="stylesheet" type="text/css" href="style1/menu.css">
+        <link rel="stylesheet" type="text/css" href="style1/menu.css">
         <link id="css" rel="stylesheet" type="text/css" href="style1/consulta.css">
         <title>Consulta</title>
     </head>
@@ -16,13 +16,13 @@
         <?php include "menu.php" ?>
         <h1>Consulta</h1>
         <div id="conteudo">
-            <div id="checkbox">
+            <div id="linha-filtros">
                 <input type="checkbox" id="cliente" name="tipo" value="cliente" checked>
                 <label for="cliente" id="label-cliente" class="pointer"> Cliente</label>
                 <input type="checkbox" id="gerente" name="tipo" value="gerente" checked>
                 <label for="gerente" class="pointer"> Gerente</label>
             </div>   
-            <div id="linha-filtros">
+            <div class="linha-filtros">
                 <div class="esquerda-quatro">
                     <label >Nome</label> 
                     <input type="text" name="nome" placeholder="Digite o nome" class="form-control"/>
@@ -54,7 +54,7 @@
                     <input type="text" name="cpf" placeholder="Digite o CPF" class="form-control"/>
                 </div>
             </div>
-            <div id="linha-filtros">
+            <div class="linha-filtros">
                 <div class="esquerda-tres">
                     <label >Cidade</label>
                     <input type="text" name="cidade" placeholder="Digite a cidade" class="form-control"/>

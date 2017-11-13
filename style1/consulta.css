@@ -9,9 +9,9 @@ h1 {
 }
 
 #conteudo {
+    margin: 0 auto;
+    width: 786px;
     text-align: center;
-    width: 60%;
-    margin-left: 20%;
 }
 
 label {
@@ -36,18 +36,20 @@ input[type="text"], select  {
     border-radius: 5px!important;
 }
 
-#linha-filtros {
+.linha-filtros {
     display: inline-block;
     margin-top: 10px;
+    width: 100%;
 }
 
 .esquerda-quatro {
     width: 39.5%;
+    padding-right: 2%;
     float: left;
 }
 
 .meio-esquerda-quatro {
-    width: 19.5%;
+    width: 21%;
     padding-right: 2%;
     float: right;
 }
@@ -60,7 +62,6 @@ input[type="text"], select  {
 
 .direita-quatro {
     width: 19.5%;
-    padding-right: 2%;
     float: right;
 }
 
