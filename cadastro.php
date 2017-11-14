@@ -20,10 +20,19 @@
                 <fieldset>
                     <legend>Informações Básicas</legend>
                     <div class="linha-cadastro">
-                        <input type="radio" name="status" value="cliente" checked="checked" id="radioCliente" class="pointer"/>
-                        <label for="radioCliente" class="pointer" id="label-cliente">Cliente</label>
-                        <input type="radio" name="status" value="gerente" id="radioGerente" class="pointer"/>
-                        <label for="radioGerente" class="pointer">Gerente</label>
+                        <ul class="radio-ul">
+                            <li>
+                                <input type="radio"  name="status" value="cliente" id="cliente" class="pointer" checked>
+                                <label for="cliente">Cliente</label>
+                                <div class="check pointer" onclick="seleciona('cliente')"></div>
+                            </li>
+  
+                            <li>
+                                <input type="radio" name="status" value="gerente" id="gerente" class="pointer">
+                                <label for="gerente">Gerente</label>
+                                <div class="check pointer" onclick="seleciona('gerente')"></div>
+                            </li>
+                        </ul>
                     </div>    
                     <div class="linha-cadastro">
                         <div class="esquerda-dois">
@@ -275,12 +284,17 @@
                         </div>
                     </div>
                 </fieldset>
-                <input type="submit" value="Cadastrar" id="cadastrar">
+                <a href="#" class="botao-a">Cadastro</a>
             </form>
         </div>
     </body>
 
     <script>
-        document.getElementById("menu-cadastro").className = "ativo";
+        function mudarMenuEscolhido() {
+            document.getElementById("menu-cadastro").className = "ativo";
+        }
+        function seleciona(id) {
+            document.getElementById(id).checked = true;
+        }
     </script>
 </html>

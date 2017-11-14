@@ -243,12 +243,16 @@
                         <option value="Zimbábue">Zimbábue</option>
                     </select>
                 </div>
-                <button type="button">Consultar</button>
+                <div class="linha-filtros">
+                    <a href="#" class="botao-a">Consulta</a>
+                </div>
             </div>
         </div>   
     </body>
 
     <script>
-        document.getElementById("menu-consulta").className = "ativo";
+        function mudarMenuEscolhido() {
+            document.getElementById("menu-consulta").className = "ativo";
+        }
     </script>
 </html>
