@@ -5,6 +5,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
 
@@ -17,10 +18,14 @@
         <div id="conteudo">
             <h1>Consulta</h1>
             <div id="linha-filtros">
-                <input type="checkbox" id="cliente" name="tipo" value="cliente" checked class="pointer">
-                <label for="cliente" id="label-cliente" class="pointer"> Cliente</label>
-                <input type="checkbox" id="gerente" name="tipo" value="gerente" checked class="pointer">
-                <label for="gerente" class="pointer"> Gerente</label>
+                <label class="control control--checkbox pointer" for="cliente">Cliente
+                    <input type="checkbox" id="cliente" name="tipo" value="cliente" checked="checked" class="pointer">
+                    <div class="control__indicator"></div>
+                </label>
+                <label class="control control--checkbox pointer" for="gerente">Gerente
+                    <input type="checkbox" id="gerente" name="tipo" value="gerente" checked="checked" class="pointer">
+                    <div class="control__indicator"></div>
+                </label>
             </div>   
             <div class="linha-filtros">
                 <div class="esquerda-quatro">
@@ -246,6 +251,46 @@
                 <div class="linha-filtros">
                     <a href="#" class="botao-a">Consulta</a>
                 </div>
+                <table class="w3-table-all">
+                    <tthead>
+                        <tr class="cor-th">
+                            <th>Usuário</th>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Cidade</th>
+                            <th>País</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>user</td>
+                        <td>NOMBREE</td>
+                        <td>3962471</td>
+                        <td>hallo@baby.com</td>
+                        <td>(13) - 2398-3213</td>
+                        <td>Santos</td>
+                        <td>Brasíl</td>
+                    </tr>
+                    <tr>
+                        <td>isso</td>
+                        <td>tá</td>
+                        <td>ficando</td>
+                        <td>lindo</td>
+                        <td>100%</td>
+                        <td>web</td>
+                        <td>designer</td>
+                    </tr>
+                    <tr>
+                        <td>eu</td>
+                        <td>falei</td>
+                        <td>que</td>
+                        <td>precisava</td>
+                        <td>de</td>
+                        <td>três</td>
+                        <td>linhas</td>
+                    </tr>
+                </table>
             </div>
         </div>   
     </body>

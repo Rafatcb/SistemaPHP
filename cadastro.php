@@ -19,7 +19,7 @@
             <form name="form" method="post" action="">
                 <fieldset>
                     <legend>Informações Básicas</legend>
-                    <div class="linha-cadastro">
+                    <div class="linha-cadastro primeira-linha">
                         <ul class="radio-ul">
                             <li>
                                 <input type="radio"  name="status" value="cliente" id="cliente" class="pointer" checked>
@@ -62,7 +62,7 @@
                     
                 <fieldset>
                     <legend>Endereço</legend>
-                    <div class="linha-cadastro">
+                    <div class="linha-cadastro primeira-linha">
                         <div class="esquerda-tres">
                             <label>CEP</label> 
                             <input type="text" name="cep" placeholder="Digite seu CEP" class="form-control"/>
@@ -269,7 +269,7 @@
 
                 <fieldset>
                     <legend>Acesso ao Sistema</legend>
-                    <div class="linha-cadastro">
+                    <div class="linha-cadastro primeira-linha">
                         <div class="esquerda-tres">
                             <label>Usuário <span class="obrigatorio">*</span></label> 
                             <input type="text" name="complemento" placeholder="Digite seu usuário" class="form-control"/>
