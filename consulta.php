@@ -12,14 +12,14 @@
         <link id="css" rel="stylesheet" type="text/css" href="style1/consulta.css">
         <title>Consulta</title>
     </head>
-    <body>
+    <body onload="mudarMenuEscolhido()">
         <?php include "menu.php" ?>
-        <h1>Consulta</h1>
         <div id="conteudo">
+            <h1>Consulta</h1>
             <div id="linha-filtros">
-                <input type="checkbox" id="cliente" name="tipo" value="cliente" checked>
+                <input type="checkbox" id="cliente" name="tipo" value="cliente" checked class="pointer">
                 <label for="cliente" id="label-cliente" class="pointer"> Cliente</label>
-                <input type="checkbox" id="gerente" name="tipo" value="gerente" checked>
+                <input type="checkbox" id="gerente" name="tipo" value="gerente" checked class="pointer">
                 <label for="gerente" class="pointer"> Gerente</label>
             </div>   
             <div class="linha-filtros">
@@ -243,7 +243,12 @@
                         <option value="Zimbábue">Zimbábue</option>
                     </select>
                 </div>
+                <button type="button">Consultar</button>
             </div>
         </div>   
     </body>
+
+    <script>
+        document.getElementById("menu-consulta").className = "ativo";
+    </script>
 </html>

@@ -1,10 +1,32 @@
-html {
+body {
     font-family: Nunito;
 }
 
 h1 {
+    cursor: default;
     margin-top: 70px;
     margin-bottom: 20px;
+    overflow: hidden;
+}
+
+h1:before, h1:after {
+    background-color: #333;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+h1:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+h1:after {
+    left: 0.5em;
+    margin-right: -50%;
 }
 
 #cadastro {
@@ -22,11 +44,16 @@ fieldset{
     border:2px solid #3498DB;
     -moz-border-radius:8px;
     -webkit-border-radius:8px;	
-    border-radius:8px;	
+    border-radius:8px;
 }
 
 legend {
-	line-height: 0px;
+    cursor: default;
+    display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: none;
+    width: auto;
     text-align: left;
     margin-left: 50px;
 	color: #3498DB;
@@ -87,6 +114,6 @@ input[type="email"], input[type="text"], input[type="date"], input[type="passwor
     height: 37px!important;
 }
 
-input[type='radio'] {
-    cursor: pointer;
+input[type='submit'] {
+    margin-bottom: 30px;
 }

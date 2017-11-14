@@ -1,11 +1,32 @@
-html {
+body {
     font-family: Nunito;
 }
 
 h1 {
+    cursor: default;
     margin-top: 70px;
     margin-bottom: 20px;
-    text-align: center;
+    overflow: hidden;
+}
+
+h1:before, h1:after {
+    background-color: #333;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+h1:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+h1:after {
+    left: 0.5em;
+    margin-right: -50%;
 }
 
 #conteudo {
@@ -83,4 +104,9 @@ input[type="text"], select  {
 .direita-tres {
     width: 32.9%;
     float: right;
+}
+
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

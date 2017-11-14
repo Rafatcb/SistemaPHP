@@ -12,7 +12,7 @@
         <link id="css" rel="stylesheet" type="text/css" href="style1/cadastro.css">
         <title>Cadastro</title>
     </head>
-    <body>
+    <body onload="mudarMenuEscolhido()">
         <?php include "menu.php"; ?>
         <div id="cadastro"> 
             <h1>Cadastro</h1>
@@ -20,9 +20,9 @@
                 <fieldset>
                     <legend>Informações Básicas</legend>
                     <div class="linha-cadastro">
-                        <input type="radio" name="status" value="cliente" checked="checked" id="radioCliente"/>
+                        <input type="radio" name="status" value="cliente" checked="checked" id="radioCliente" class="pointer"/>
                         <label for="radioCliente" class="pointer" id="label-cliente">Cliente</label>
-                        <input type="radio" name="status" value="gerente" id="radioGerente"/>
+                        <input type="radio" name="status" value="gerente" id="radioGerente" class="pointer"/>
                         <label for="radioGerente" class="pointer">Gerente</label>
                     </div>    
                     <div class="linha-cadastro">
@@ -42,7 +42,7 @@
                         </div>
                         <div class="direita-tres">
                             <label>Data de Aniversário</label>
-                            <input type="date" name="data" placeholder="Digite sua data de aniversário" class="form-control"/>
+                            <input type="date" name="data" placeholder="Digite sua data de aniversário" class="form-control pointer"/>
                         </div>
                         <div class="meio-tres">
                             <label>E-mail</label>
@@ -279,4 +279,8 @@
             </form>
         </div>
     </body>
+
+    <script>
+        document.getElementById("menu-cadastro").className = "ativo";
+    </script>
 </html>
