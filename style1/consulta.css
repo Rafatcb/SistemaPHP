@@ -125,8 +125,8 @@ a.botao-a {
 	border-radius: 4px;
 	padding: 20px 30px;
 	color: rgba(52, 152, 219, 0.6);
-    text-shadow: 1px 1px 2px rgba(167, 203, 224, 0.5), 0 0 25px rgba(167, 203, 224, 0.5), 0 0 5px rgba(167, 203, 224, 0.5);
     box-shadow: rgba(52, 152, 219, 0.85) 0 0px 0px 2px inset;
+	background-color: rgba(255,255,255,0.856);
 }
 
 a.botao-a:hover {
@@ -230,5 +230,5 @@ th:hover {
 
 tr:not(:first-child):hover
 {
-    background: rgba(110, 180, 224, 0)!important;
+    background-color: rgb(205, 201, 227)!important;
 }
