@@ -39,7 +39,7 @@
                             <label >Nome <span class="obrigatorio">*</span></label>
                             <input type="text" name="nome" placeholder="Digite seu nome" class="form-control"/>
                         </div>
-                        <div class="direita-dois">
+                        <div class="esquerda-dois sem-padding-right">
                             <label>CPF <span class="obrigatorio">*</span></label> 
                             <input type="text" name="cpf" placeholder="Digite seu CPF" class="form-control"/>
                         </div>
@@ -49,13 +49,13 @@
                             <label>Telefone</label>
                             <input type="text" name="telefone" placeholder="Digite seu número de telefone" class="form-control"/>
                         </div>
-                        <div class="direita-tres">
-                            <label>Data de Aniversário</label>
-                            <input type="date" name="data" placeholder="Digite sua data de aniversário" class="form-control pointer"/>
-                        </div>
-                        <div class="meio-tres">
+                        <div class="esquerda-tres">
                             <label>E-mail</label>
                             <input type="email" name="email" placeholder="Digite seu e-mail" class="form-control"/>
+                        </div>
+                        <div class="esquerda-tres sem-padding-right">
+                            <label>Data de Aniversário</label>
+                            <input type="date" name="data" placeholder="Digite sua data de aniversário" class="form-control pointer"/>
                         </div>
                     </div>
                 </fieldset>
@@ -67,7 +67,11 @@
                             <label>CEP</label> 
                             <input type="text" name="cep" placeholder="Digite seu CEP" class="form-control"/>
                         </div>
-                        <div class="direita-tres">
+                        <div class="esquerda-tres">
+                            <label>Cidade</label> 
+                            <input type="text" name="cidade" placeholder="Digite a cidade" class="form-control"/>
+                        </div>
+                        <div class="esquerda-tres sem-padding-right">
                             <label>País</label>
                             <select name="pais" class="form-control pointer">
                                 <option value="África do Sul">África do Sul</option>
@@ -91,12 +95,12 @@
                                 <option value="Bélgica">Bélgica</option>
                                 <option value="Benin">Benin</option>
                                 <option value="Bermudas">Bermudas</option>
+                                <option value="Botão">Botão</option>
                                 <option value="Botsuana">Botsuana</option>
                                 <option value="Brasil" selected>Brasil</option>
                                 <option value="Brunei">Brunei</option>
                                 <option value="Bulgária">Bulgária</option>
                                 <option value="Burkina Fasso">Burkina Fasso</option>
-                                <option value="botão">botão</option>
                                 <option value="Cabo Verde">Cabo Verde</option>
                                 <option value="Camarões">Camarões</option>
                                 <option value="Camboja">Camboja</option>
@@ -246,23 +250,19 @@
                                 <option value="Zimbábue">Zimbábue</option>
                             </select>
                         </div>
-                        <div class="meio-tres">
-                            <label>Cidade</label> 
-                            <input type="text" name="cidade" placeholder="Digite a cidade" class="form-control"/>
-                        </div>
                     </div>
                     <div class="linha-cadastro">
                         <div class="esquerda-tres">
                             <label>Rua</label> 
                             <input type="text" name="rua" placeholder="Digite sua rua" class="form-control"/>
                         </div>
-                        <div class="direita-tres">
-                            <label>Complemento</label>
-                            <input type="text" name="complemento" placeholder="Digite o complemento" class="form-control"/>
-                            </div>
-                        <div class="meio-tres">
+                        <div class="esquerda-tres">
                             <label>Número</label>  
                             <input type="text" name="numero" placeholder="Digite o numero da residência" class="form-control"/>
+                        </div>
+                        <div class="esquerda-tres sem-padding-right">
+                            <label>Complemento</label>
+                            <input type="text" name="complemento" placeholder="Digite o complemento" class="form-control"/>
                         </div>
                     </div>
                 </fieldset>
@@ -274,13 +274,13 @@
                             <label>Usuário <span class="obrigatorio">*</span></label> 
                             <input type="text" name="complemento" placeholder="Digite seu usuário" class="form-control"/>
                         </div>
-                        <div class="direita-tres">
-                            <label>Confirmar Senha <span class="obrigatorio">*</span></label>
-                            <input type="password" name="cidade" placeholder="Confirme sua senha" class="form-control"/>
-                        </div>
-                        <div class="meio-tres">
+                        <div class="esquerda-tres">
                             <label>Senha <span class="obrigatorio">*</span></label>
                             <input type="password" name="cidade" placeholder="Digite sua senha" class="form-control"/>
+                        </div>
+                        <div class="esquerda-tres sem-padding-right">
+                            <label>Confirmar Senha <span class="obrigatorio">*</span></label>
+                            <input type="password" name="cidade" placeholder="Confirme sua senha" class="form-control"/>
                         </div>
                     </div>
                 </fieldset>

@@ -82,25 +82,14 @@ legend {
     float: left;
 }
 
-.direita-dois {
-    width: 49.5%;
-    float: right;
-}
-
 .esquerda-tres {
     width: 32.9%;
+    padding-right: 1.3%;
     float: left;
 }
 
-.meio-tres {
-    width: 32.9%;
-    padding-right: 1.3%;
-    float: right;
-}
-
-.direita-tres {
-    width: 32.9%;
-    float: right;
+.sem-padding-right {
+    padding-right: 0;
 }
 
 .obrigatorio {
@@ -143,7 +132,7 @@ a.botao-a {
 	padding: 20px 30px;
 	color: #3498DB;
 	box-shadow: rgba(52, 152, 219, 0.85) 0 0px 0px 2px inset;
-	background-color: rgba(255,255,255,0.856);
+    background-color: rgba(255,255,255,0.856);
 }
 
 a.botao-a:hover {

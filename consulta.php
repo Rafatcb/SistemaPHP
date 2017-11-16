@@ -32,11 +32,11 @@
                     <label >Nome</label> 
                     <input type="text" name="nome" placeholder="Digite o nome" class="form-control"/>
                 </div>
-                <div class="direita-quatro">
-                    <label >Ano de Nascimento</label>
-                    <input type="text" maxlength="4" name="ano" placeholder="Digite o ano" class="form-control"/>
+                <div class="esquerda-quatro-menor">
+                    <label >CPF</label>
+                    <input type="text" name="cpf" placeholder="Digite o CPF" class="form-control"/>
                 </div>
-                <div class="meio-direita-quatro">
+                <div class="esquerda-quatro-menor">
                     <label >Mês de Aniversário</label>
                     <select name="pais" class="form-control pointer">
                             <option value="Nenhum">-</option>
@@ -54,9 +54,9 @@
                             <option value="Dezembro">Dezembro</option>
                     </select>
                 </div>
-                <div class="meio-esquerda-quatro">
-                    <label >CPF</label>
-                    <input type="text" name="cpf" placeholder="Digite o CPF" class="form-control"/>
+                <div class="esquerda-quatro-menor sem-padding-right">
+                    <label >Ano de Nascimento</label>
+                    <input type="text" maxlength="4" name="ano" placeholder="Digite o ano" class="form-control"/>
                 </div>
             </div>
             <div class="linha-filtros">
@@ -64,11 +64,7 @@
                     <label >Cidade</label>
                     <input type="text" name="cidade" placeholder="Digite a cidade" class="form-control"/>
                 </div>
-                <div class="direita-tres">
-                    <label >Usuário</label>
-                    <input type="text" name="pais" placeholder="Digite o usuário" class="form-control"/>
-                </div>
-                <div class="meio-tres">
+                <div class="esquerda-tres">
                     <label >País</label>
                     <select name="pais" class="form-control pointer">
                         <option value="Nenhum">-</option>
@@ -93,12 +89,12 @@
                         <option value="Bélgica">Bélgica</option>
                         <option value="Benin">Benin</option>
                         <option value="Bermudas">Bermudas</option>
+                        <option value="Botão">Botão</option>
                         <option value="Botsuana">Botsuana</option>
                         <option value="Brasil">Brasil</option>
                         <option value="Brunei">Brunei</option>
                         <option value="Bulgária">Bulgária</option>
                         <option value="Burkina Fasso">Burkina Fasso</option>
-                        <option value="botão">botão</option>
                         <option value="Cabo Verde">Cabo Verde</option>
                         <option value="Camarões">Camarões</option>
                         <option value="Camboja">Camboja</option>
@@ -248,12 +244,16 @@
                         <option value="Zimbábue">Zimbábue</option>
                     </select>
                 </div>
+                <div class="esquerda-tres sem-padding-right">
+                    <label >Usuário</label>
+                    <input type="text" name="pais" placeholder="Digite o usuário" class="form-control"/>
+                </div>
                 <div class="linha-filtros">
                     <a href="#" class="botao-a">Consulta</a>
                 </div>
                 <table class="w3-table-all">
                     <tthead>
-                        <tr class="cor-th">
+                        <tr class="cor-th"> <!--- Adicionar coluna para Tipo -->
                             <th>Usuário</th>
                             <th>Nome</th>
                             <th>CPF</th>
@@ -263,7 +263,7 @@
                             <th>País</th>
                         </tr>
                     </thead>
-                    <tr>
+                    <tr onclick="mensagemErro();">
                         <td>user</td>
                         <td>NOMBREE</td>
                         <td>3962471</td>
@@ -291,6 +291,12 @@
                         <td>linhas</td>
                     </tr>
                 </table>
+				<div id="myModal" class="modal-info">
+					<div class="modal-content-info">
+						<div onclick="fechar();"><span class="close">&times;</span></div>
+						<p id="modalP">Erro!</p>
+					</div>
+				</div>
             </div>
         </div>   
     </body>
@@ -298,6 +304,34 @@
     <script>
         function mudarMenuEscolhido() {
             document.getElementById("menu-consulta").className = "ativo";
+        }
+
+        // Informações do Usuário
+        function mensagemErro() {
+            document.getElementById("modalP").innerHTML = "Usuário: " + "<br />";
+            document.getElementById("modalP").innerHTML += "Nome: " + "<br />";
+            document.getElementById("modalP").innerHTML += "CPF: " + "<br />";
+            document.getElementById("modalP").innerHTML += "Telefone: " + "<br />";
+            document.getElementById("modalP").innerHTML += "E-mail: " + "<br />";
+            document.getElementById("modalP").innerHTML += "Data de Aniversário: " + "<br />";
+            document.getElementById("modalP").innerHTML += "CEP: " + "<br />";
+            document.getElementById("modalP").innerHTML += "Cidade: " + "<br />";
+            document.getElementById("modalP").innerHTML += "País: " + "<br />";
+            document.getElementById("modalP").innerHTML += "Rua: " + "<br />";
+            document.getElementById("modalP").innerHTML += "Número: " + "<br />";
+            document.getElementById("modalP").innerHTML += "Complemento: ";
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        // Quando o usuário clicar no botão X
+        function fechar () {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        // Quando o usuário clica em qualquer lugar fora do modal, fecha o modal
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal'))
+                fechar();
         }
     </script>
 </html>
