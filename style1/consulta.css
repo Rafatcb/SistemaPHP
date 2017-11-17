@@ -190,11 +190,11 @@ a.botao-a:hover {
 	border-width: 8px 2px 2px 1px;
 }
 
-th, td {
+th, .lista td {
     border-right: 1px solid #ddd;
 }
 
-th {
+.lista th {
     text-align: center!important;
 }
 
@@ -203,24 +203,34 @@ th {
     color: #ffffff!important;
 }
 
-tr:not(:first-child) {
+.lista tr:not(:first-child) {
     cursor: pointer;
 }
 
-th:hover {
+.lista th:hover {
     cursor: default;
 }
 
-tr:not(:first-child):hover
+.lista tr:not(:first-child):hover
 {
     background-color: rgb(205, 201, 227)!important;
+}
+
+.infos th {
+    width: 12%;
+}
+
+.centralizar {
+    padding-top: 20px;
+    width: 90%;
+    margin: auto;
 }
 
 .modal-info {
     display: none; /* Começa invisível */
     position: fixed; 
     z-index: 1; /* Fica no topo */
-    padding-top: 150px; /* Posição da caixa */
+    padding-top: 60px; /* Posição da caixa */
     left: 0;
     top: 0;
     width: 100%;
@@ -236,7 +246,7 @@ tr:not(:first-child):hover
     margin: auto;
     padding: 15px;
     border: 1px solid #888;
-    width: 80%;
+    width: 40%;
 }
 
 /* O Botão de Fechar (X) do Modal */
@@ -247,10 +257,10 @@ tr:not(:first-child):hover
     font-weight: bold;
 }
 
-/* Quando o mouse estiver em cima do bot�o de fechar do modal */
+/* Quando o mouse estiver em cima do botão de fechar do modal */
 .close:hover,
 .close:focus {
-    color: red;
+    color: rgb(255, 0, 0);
     text-decoration: none;
     cursor: pointer;
 }

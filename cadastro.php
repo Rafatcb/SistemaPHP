@@ -37,21 +37,21 @@
                     <div class="linha-cadastro">
                         <div class="esquerda-dois">
                             <label >Nome <span class="obrigatorio">*</span></label>
-                            <input type="text" name="nome" placeholder="Digite seu nome" class="form-control"/>
+                            <input type="text" name="nome" placeholder="Digite seu nome" class="form-control" maxlength="50"/>
                         </div>
                         <div class="esquerda-dois sem-padding-right">
                             <label>CPF <span class="obrigatorio">*</span></label> 
-                            <input type="text" name="cpf" placeholder="Digite seu CPF" class="form-control"/>
+                            <input type="text" name="cpf" placeholder="Digite seu CPF" class="form-control" maxlength="14"/>
                         </div>
                     </div>
                     <div class="linha-cadastro">
                         <div class="esquerda-tres">
                             <label>Telefone</label>
-                            <input type="text" name="telefone" placeholder="Digite seu número de telefone" class="form-control"/>
+                            <input type="text" name="telefone" placeholder="Digite seu número de telefone" class="form-control" maxlength="19"/>
                         </div>
                         <div class="esquerda-tres">
                             <label>E-mail</label>
-                            <input type="email" name="email" placeholder="Digite seu e-mail" class="form-control"/>
+                            <input type="email" name="email" placeholder="Digite seu e-mail" class="form-control" maxlength="40"/>
                         </div>
                         <div class="esquerda-tres sem-padding-right">
                             <label>Data de Aniversário</label>
@@ -65,11 +65,11 @@
                     <div class="linha-cadastro primeira-linha">
                         <div class="esquerda-tres">
                             <label>CEP</label> 
-                            <input type="text" name="cep" placeholder="Digite seu CEP" class="form-control"/>
+                            <input type="text" name="cep" placeholder="Digite seu CEP" class="form-control" maxlength="12"/>
                         </div>
                         <div class="esquerda-tres">
                             <label>Cidade</label> 
-                            <input type="text" name="cidade" placeholder="Digite a cidade" class="form-control"/>
+                            <input type="text" name="cidade" placeholder="Digite a cidade" class="form-control" maxlength="40"/>
                         </div>
                         <div class="esquerda-tres sem-padding-right">
                             <label>País</label>
@@ -254,15 +254,15 @@
                     <div class="linha-cadastro">
                         <div class="esquerda-tres">
                             <label>Rua</label> 
-                            <input type="text" name="rua" placeholder="Digite sua rua" class="form-control"/>
+                            <input type="text" name="rua" placeholder="Digite sua rua" class="form-control" maxlength="40"/>
                         </div>
                         <div class="esquerda-tres">
                             <label>Número</label>  
-                            <input type="text" name="numero" placeholder="Digite o numero da residência" class="form-control"/>
+                            <input type="text" name="numero" placeholder="Digite o numero da residência" class="form-control" maxlength="6"/>
                         </div>
                         <div class="esquerda-tres sem-padding-right">
                             <label>Complemento</label>
-                            <input type="text" name="complemento" placeholder="Digite o complemento" class="form-control"/>
+                            <input type="text" name="complemento" placeholder="Digite o complemento" class="form-control" maxlength="30"/>
                         </div>
                     </div>
                 </fieldset>
@@ -272,15 +272,15 @@
                     <div class="linha-cadastro primeira-linha">
                         <div class="esquerda-tres">
                             <label>Usuário <span class="obrigatorio">*</span></label> 
-                            <input type="text" name="complemento" placeholder="Digite seu usuário" class="form-control"/>
+                            <input type="text" name="complemento" placeholder="Digite seu usuário" class="form-control" maxlength="20"/>
                         </div>
                         <div class="esquerda-tres">
                             <label>Senha <span class="obrigatorio">*</span></label>
-                            <input type="password" name="cidade" placeholder="Digite sua senha" class="form-control"/>
+                            <input type="password" name="cidade" placeholder="Digite sua senha" class="form-control" maxlength="20"/>
                         </div>
                         <div class="esquerda-tres sem-padding-right">
                             <label>Confirmar Senha <span class="obrigatorio">*</span></label>
-                            <input type="password" name="cidade" placeholder="Confirme sua senha" class="form-control"/>
+                            <input type="password" name="cidade" placeholder="Confirme sua senha" class="form-control" maxlength="20"/>
                         </div>
                     </div>
                 </fieldset>

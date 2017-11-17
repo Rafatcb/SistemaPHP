@@ -30,11 +30,11 @@
             <div class="linha-filtros">
                 <div class="esquerda-quatro">
                     <label >Nome</label> 
-                    <input type="text" name="nome" placeholder="Digite o nome" class="form-control"/>
+                    <input type="text" name="nome" placeholder="Digite o nome" class="form-control" maxlength="50"/>
                 </div>
                 <div class="esquerda-quatro-menor">
                     <label >CPF</label>
-                    <input type="text" name="cpf" placeholder="Digite o CPF" class="form-control"/>
+                    <input type="text" name="cpf" placeholder="Digite o CPF" class="form-control" maxlength="14"/>
                 </div>
                 <div class="esquerda-quatro-menor">
                     <label >Mês de Aniversário</label>
@@ -62,7 +62,7 @@
             <div class="linha-filtros">
                 <div class="esquerda-tres">
                     <label >Cidade</label>
-                    <input type="text" name="cidade" placeholder="Digite a cidade" class="form-control"/>
+                    <input type="text" name="cidade" placeholder="Digite a cidade" class="form-control" maxlength="40"/>
                 </div>
                 <div class="esquerda-tres">
                     <label >País</label>
@@ -246,12 +246,12 @@
                 </div>
                 <div class="esquerda-tres sem-padding-right">
                     <label >Usuário</label>
-                    <input type="text" name="pais" placeholder="Digite o usuário" class="form-control"/>
+                    <input type="text" name="pais" placeholder="Digite o usuário" class="form-control" maxlength="20"/>
                 </div>
                 <div class="linha-filtros">
                     <a href="#" class="botao-a">Consulta</a>
                 </div>
-                <table class="w3-table-all">
+                <table class="w3-table-all lista">
                     <tthead>
                         <tr class="cor-th"> <!--- Adicionar coluna para Tipo -->
                             <th>Usuário</th>
@@ -308,18 +308,21 @@
 
         // Informações do Usuário
         function mensagemErro() {
-            document.getElementById("modalP").innerHTML = "Usuário: " + "<br />";
-            document.getElementById("modalP").innerHTML += "Nome: " + "<br />";
-            document.getElementById("modalP").innerHTML += "CPF: " + "<br />";
-            document.getElementById("modalP").innerHTML += "Telefone: " + "<br />";
-            document.getElementById("modalP").innerHTML += "E-mail: " + "<br />";
-            document.getElementById("modalP").innerHTML += "Data de Aniversário: " + "<br />";
-            document.getElementById("modalP").innerHTML += "CEP: " + "<br />";
-            document.getElementById("modalP").innerHTML += "Cidade: " + "<br />";
-            document.getElementById("modalP").innerHTML += "País: " + "<br />";
-            document.getElementById("modalP").innerHTML += "Rua: " + "<br />";
-            document.getElementById("modalP").innerHTML += "Número: " + "<br />";
-            document.getElementById("modalP").innerHTML += "Complemento: ";
+            var html = "<div class='centralizar'><table class='w3-table-all infos'>";
+            html += "<tr><th class='cor-th'>Usuário</th><td>" + "</td></tr>";
+            html += "<tr><th class='cor-th'>Nome</th><td>" + "</td></tr>";
+            html += "<tr><th class='cor-th'>CPF</th><td>" + "</td></tr>";
+            html += "<tr><th class='cor-th'>Telefone</th><td>" + "</td></tr>";
+            html += "<tr><th class='cor-th'>E-mail</th><td>" + "</td></tr>";
+            html += "<tr><th class='cor-th'>Data de Aniversário</th><td>" + "</td></tr>";
+            html += "<tr><th class='cor-th'>CEP</th><td>" + "</td></tr>";
+            html += "<tr><th class='cor-th'>Cidade</th><td>" + "</td></tr>";
+            html += "<tr><th class='cor-th'>País</th><td>" + "</td></tr>";
+            html += "<tr><th class='cor-th'>Rua</th><td>" + "</td></tr>";
+            html += "<tr><th class='cor-th'>Número</th><td>" + "</td></tr>";
+            html += "<tr><th class='cor-th'>Complemento</th><td>" + "</td></tr>";
+            html += "</table>";
+            document.getElementById("modalP").innerHTML = html;
             document.getElementById('myModal').style.display = "block";
         }
 
