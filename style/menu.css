@@ -23,11 +23,11 @@ li.menuItem a, .dropdown a, .dropbtn {
     text-decoration: none;
 }
 
-li.menuItem a.ativo {
+a.ativo {
     background-color: #3498DB;
 }
 
-li.menuItem a:hover:not(.ativo):not(.dropdown-conteudo-a), .dropdown:hover .dropbtn {
+li.menuItem .dropdown:hover .dropbtn, a:hover:not(.ativo):not(.dropdown-conteudo-a):not(#menu-conta) {
     background-color: #0f0f0f;
 }
 
@@ -57,7 +57,9 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-conteudo a:hover {background-color: #f1f1f1}
+.dropdown-conteudo a:hover {
+    background-color: #f1f1f1
+}
 
 .dropdown:hover .dropdown-conteudo {
     visibility: visible;

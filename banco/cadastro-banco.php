@@ -95,8 +95,9 @@
             }
         }
         else {
+            $span = "<span class='obrigatorio'>*</span>";
             echo '<script type="text/javascript">
-                    var html = "Erro - Preencha todos os campos";
+                    var html = "Erro - Preencha todos os campos ' . $span . '";
                     document.getElementById("modalP").innerHTML = html;
                     document.getElementById("myModal").style.display = "block";
                 </script>';

@@ -106,10 +106,6 @@ label {
     font-weight: bold;
 }
 
-#label-cliente {
-    margin-right: 60px;
-}
-
 input[type="email"], input[type="text"], input[type="date"], input[type="password"], select {
     border-radius: 5px!important;
     margin-bottom: 25px!important;
@@ -220,7 +216,7 @@ ul.radio-ul li .check::before {
     margin-bottom: 10px;
 }
 
-ul li label {
+.label-checkbox {
     margin-left: 10%;
 }
 
@@ -265,4 +261,8 @@ ul li label {
 
 #modalP {
     padding-top: 8px;
+}
+
+input[type="text"]:disabled {    
+    cursor: default;
 }

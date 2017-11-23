@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
-
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script type='text/javascript' src='cep/cep.js'></script>
         <link rel="stylesheet" type="text/css" href="style/menu.css">
         <link id="css" rel="stylesheet" type="text/css" href="style/cadastro.css">
         <title>Cadastro</title>
@@ -36,11 +37,11 @@
                     </div>    
                     <div class="linha-cadastro">
                         <div class="esquerda-dois">
-                            <label >Nome <span class="obrigatorio">*</span></label>
+                            <label class="label-checkbox">Nome <span class="obrigatorio">*</span></label>
                             <input type="text" name="nome" placeholder="Nome" class="form-control" maxlength="50"/>
                         </div>
                         <div class="esquerda-dois sem-padding-right">
-                            <label>CPF <span class="obrigatorio">*</span></label> 
+                            <label class="label-checkbox">CPF <span class="obrigatorio">*</span></label> 
                             <input type="text" name="cpf" placeholder="CPF" class="form-control" maxlength="14"/>
                         </div>
                     </div>
@@ -65,11 +66,11 @@
                     <div class="linha-cadastro primeira-linha">
                         <div class="esquerda-tres">
                             <label>CEP</label> 
-                            <input type="text" name="cep" placeholder="CEP" class="form-control" maxlength="12"/>
+                            <input type="text" name="cep" id="cep" placeholder="CEP" class="form-control" maxlength="12"/>
                         </div>
                         <div class="esquerda-tres">
                             <label>Cidade</label> 
-                            <input type="text" name="cidade" placeholder="Cidade" class="form-control" maxlength="40"/>
+                            <input type="text" name="cidade" id="cidade" placeholder="Cidade" class="form-control" maxlength="40"/>
                         </div>
                         <div class="esquerda-tres sem-padding-right">
                             <label>País</label>
@@ -254,15 +255,15 @@
                     <div class="linha-cadastro">
                         <div class="esquerda-quatro">
                             <label>Bairro</label>
-                            <input type="text" name="bairro" placeholder="Bairro" class="form-control" maxlength="30"/>
+                            <input type="text" name="bairro" id="bairro" placeholder="Bairro" class="form-control" maxlength="30"/>
                         </div>
                         <div class="esquerda-tres">
                             <label>Rua</label> 
-                            <input type="text" name="rua" placeholder="Rua" class="form-control" maxlength="40"/>
+                            <input type="text" name="rua" id="rua" placeholder="Rua" class="form-control" maxlength="40"/>
                         </div>
                         <div class="esquerda-quatro">
                             <label>Número</label>  
-                            <input type="text" name="numero" placeholder="Número" class="form-control" maxlength="6"/>
+                            <input type="text" name="numero" id="numero" placeholder="Número" class="form-control" maxlength="6"/>
                         </div>
                         <div class="esquerda-quatro sem-padding-right">
                             <label>Complemento</label>
