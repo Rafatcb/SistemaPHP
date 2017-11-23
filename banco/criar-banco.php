@@ -4,11 +4,13 @@
     $password = "";
 
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=trabalho_php", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=phpmyadmin", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         // Create database
-        $sql = "- phpMyAdmin SQL Dump
+        $sql = "CREATE DATABASE trabalho_php;
+            USE trabalho_php;
+            -- phpMyAdmin SQL Dump
             -- version 4.7.0
             -- https://www.phpmyadmin.net/
             --
@@ -71,13 +73,15 @@
             /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
             /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
             /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;";
-        if ($conn->query($sql) === TRUE) {
-            echo "Banco criado com sucesso";
-        } else {
-            echo "Erro na criação do banco de dados: " . $conn->error;
-        }
-    
-        $conn->close();
+        $conn->exec($sql);
+        $conn = null;
+
+        $conn = new PDO("mysql:host=$servername;dbname=trabalho_php", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = " INSERT INTO cliente (usuario, senha, nome, tipo)
+                VALUES ('admin', 'admin', 'Admin', '1');";
+        $conn->exec($sql);
+        $conn = null;
     }
     catch(PDOException $e){
         echo "Conexão com o banco de dados não estabelecida: " . $e->getMessage();

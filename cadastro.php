@@ -16,19 +16,19 @@
         <?php include "menu.php"; ?>
         <div id="cadastro"> 
             <h1>Cadastro</h1>
-            <form name="form" method="post" action="">
+            <form name="form" method="post" action="banco/cadastro-banco.php" id="cadastro-form">
                 <fieldset>
                     <legend>Informações Básicas</legend>
                     <div class="linha-cadastro primeira-linha">
                         <ul class="radio-ul">
                             <li>
-                                <input type="radio"  name="status" value="cliente" id="cliente" class="pointer" checked>
+                                <input type="radio"  name="tipo" value="cliente" id="cliente" class="pointer" checked>
                                 <label for="cliente">Cliente</label>
                                 <div class="check pointer" onclick="seleciona('cliente')"></div>
                             </li>
   
                             <li>
-                                <input type="radio" name="status" value="gerente" id="gerente" class="pointer">
+                                <input type="radio" name="tipo" value="gerente" id="gerente" class="pointer">
                                 <label for="gerente">Gerente</label>
                                 <div class="check pointer" onclick="seleciona('gerente')"></div>
                             </li>
@@ -272,19 +272,19 @@
                     <div class="linha-cadastro primeira-linha">
                         <div class="esquerda-tres">
                             <label>Usuário <span class="obrigatorio">*</span></label> 
-                            <input type="text" name="complemento" placeholder="Digite seu usuário" class="form-control" maxlength="20"/>
+                            <input type="text" name="usuario" placeholder="Digite seu usuário" class="form-control" maxlength="20"/>
                         </div>
                         <div class="esquerda-tres">
                             <label>Senha <span class="obrigatorio">*</span></label>
-                            <input type="password" name="cidade" placeholder="Digite sua senha" class="form-control" maxlength="20"/>
+                            <input type="password" name="senha" placeholder="Digite sua senha" class="form-control" maxlength="20"/>
                         </div>
                         <div class="esquerda-tres sem-padding-right">
                             <label>Confirmar Senha <span class="obrigatorio">*</span></label>
-                            <input type="password" name="cidade" placeholder="Confirme sua senha" class="form-control" maxlength="20"/>
+                            <input type="password" name="confirmar" placeholder="Confirme sua senha" class="form-control" maxlength="20"/>
                         </div>
                     </div>
                 </fieldset>
-                <a href="#" class="botao-a">Cadastro</a>
+                <a href="#" class="botao-a" id="cadastro-a">Cadastro</a>
             </form>
         </div>
     </body>
@@ -295,6 +295,10 @@
         }
         function seleciona(id) {
             document.getElementById(id).checked = true;
+        }
+
+        document.getElementById("cadastro-a").onclick = function() {
+            document.getElementById("cadastro-form").submit();
         }
     </script>
 </html>

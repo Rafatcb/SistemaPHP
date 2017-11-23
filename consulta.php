@@ -253,39 +253,35 @@
                 </div>
                 <table class="w3-table-all lista">
                     <tthead>
-                        <tr class="cor-th"> <!--- Adicionar coluna para Tipo -->
+                        <tr class="cor-th">
+                            <th>Tipo</th>
                             <th>Usuário</th>
                             <th>Nome</th>
                             <th>CPF</th>
-                            <th>E-mail</th>
-                            <th>Telefone</th>
                             <th>Cidade</th>
                             <th>País</th>
                         </tr>
                     </thead>
                     <tr onclick="mensagemErro();">
+                        <td>Gerente</td>
                         <td>user</td>
                         <td>NOMBREE</td>
-                        <td>3962471</td>
-                        <td>hallo@baby.com</td>
                         <td>(13) - 2398-3213</td>
                         <td>Santos</td>
                         <td>Brasíl</td>
                     </tr>
                     <tr>
+                        <td>Cliente</td>
                         <td>isso</td>
                         <td>tá</td>
-                        <td>ficando</td>
-                        <td>lindo</td>
                         <td>100%</td>
                         <td>web</td>
                         <td>designer</td>
                     </tr>
                     <tr>
+                        <td>Gerente</td>
                         <td>eu</td>
                         <td>falei</td>
-                        <td>que</td>
-                        <td>precisava</td>
                         <td>de</td>
                         <td>três</td>
                         <td>linhas</td>
