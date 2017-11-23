@@ -8,12 +8,13 @@
 
 
 
-        <link rel="stylesheet" type="text/css" href="style/menu.css">
-        <link id="css" rel="stylesheet" type="text/css" href="style/cadastro.css">
+        <link rel="stylesheet" type="text/css" href="style1/menu.css">
+        <link id="css" rel="stylesheet" type="text/css" href="style1/cadastro.css">
         <title>Cadastro</title>
     </head>
     <body onload="mudarMenuEscolhido()">
         <?php include "menu.php"; ?>
+        <?php include "banco/cadastro-banco.php"; ?>
         <div id="cadastro"> 
             <h1>Cadastro</h1>
             <form name="form" method="post" action="<?=$_SERVER['PHP_SELF']?>" id="cadastro-form">
@@ -290,7 +291,6 @@
                 </fieldset>
                 <a href="#" class="botao-a" id="cadastro-a">Cadastro</a>
             </form>
-            <?php include "banco/cadastro-banco.php"; ?>
         </div>
     </body>
 
@@ -298,24 +298,12 @@
         function mudarMenuEscolhido() {
             document.getElementById("menu-cadastro").className = "ativo";
         }
-        
         function seleciona(id) {
             document.getElementById(id).checked = true;
         }
 
         document.getElementById("cadastro-a").onclick = function() {
             document.getElementById("cadastro-form").submit();
-        }
-
-        // Quando o usuário clicar no botão X
-        function fechar () {
-            document.getElementById('myModal').style.display = "none";
-        }
-
-        // Quando o usuário clica em qualquer lugar fora do modal, fecha o modal
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('myModal'))
-                fechar();
         }
     </script>
 </html>

@@ -1,5 +1,12 @@
 <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        echo '<div id="myModal" class="modal-info">
+                <div class="modal-content-info">
+                    <div onclick="fechar();"><span class="close">&times;</span></div>
+                    <p id="modalP">Erro!</p>
+                </div>
+            </div>';
+
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -54,25 +61,45 @@
                     $stmt->bindParam(':tipo', $tipo);
 
                     $stmt->execute();
-                    echo "Usuário cadastrado com sucesso";
+                    echo '<script type="text/javascript">
+                            var html = "Usuário cadastrado com sucesso";
+                            document.getElementById("modalP").innerHTML = html;
+                            document.getElementById("myModal").style.display = "block";
+                        </script>';
                 }
                 else {
-                    echo "Usuário já cadastrado";
+                    echo '<script type="text/javascript">
+                            var html = "Erro - Usuário já cadastrado";
+                            document.getElementById("modalP").innerHTML = html;
+                            document.getElementById("myModal").style.display = "block";
+                        </script>';
                 }
                 
                 $conn = null;
             }
             catch(PDOException $e){
                 if ($e->getcode() == 23000) {
-                    echo "Usuário já cadastrado";
+                    echo '<script type="text/javascript">
+                            var html = "Erro - Usuário já cadastrado";
+                            document.getElementById("modalP").innerHTML = html;
+                            document.getElementById("myModal").style.display = "block";
+                        </script>';
                 }
                 else {
-                    echo "Conexão com o banco de dados não estabelecida: " . $e->getMessage();
+                    echo '<script type="text/javascript">
+                            var html = "Erro - Conexão com o banco de dados não estabelecida: ' .  $e->getMessage() . '"
+                            document.getElementById("modalP").innerHTML = html;
+                            document.getElementById("myModal").style.display = "block";
+                        </script>';
                 }
             }
         }
         else {
-            echo "nope";
+            echo '<script type="text/javascript">
+                    var html = "Erro - Preencha todos os campos";
+                    document.getElementById("modalP").innerHTML = html;
+                    document.getElementById("myModal").style.display = "block";
+                </script>';
         }
     }
 ?>

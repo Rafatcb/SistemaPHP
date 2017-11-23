@@ -223,3 +223,46 @@ ul.radio-ul li .check::before {
 ul li label {
     margin-left: 10%;
 }
+
+.modal-info {
+    display: none; /* Começa invisível */
+    position: fixed; 
+    z-index: 1; /* Fica no topo */
+    padding-top: 20%; /* Posição da caixa */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilita o scroll, se necessário */
+    background-color: rgb(0,0,0); /* Caso a opacidade não funcione, o fundo será preto */
+    background-color: rgba(0,0,0,0.4); /* Fundo com opacidade */
+}
+
+/* Conteúdo do Modal */
+.modal-content-info {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 15px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+/* O Botão de Fechar (X) do Modal */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Quando o mouse estiver em cima do botão de fechar do modal */
+.close:hover,
+.close:focus {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalP {
+    padding-top: 8px;
+}
