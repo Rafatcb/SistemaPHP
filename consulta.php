@@ -251,48 +251,7 @@
                 <div class="linha-filtros">
                     <a href="#" class="botao-a">Consulta</a>
                 </div>
-                <table class="w3-table-all lista">
-                    <tthead>
-                        <tr class="cor-th">
-                            <th>Tipo</th>
-                            <th>Usuário</th>
-                            <th>Nome</th>
-                            <th>CPF</th>
-                            <th>Cidade</th>
-                            <th>País</th>
-                        </tr>
-                    </thead>
-                    <tr onclick="mensagemErro();">
-                        <td>Gerente</td>
-                        <td>user</td>
-                        <td>NOMBREE</td>
-                        <td>(13) - 2398-3213</td>
-                        <td>Santos</td>
-                        <td>Brasíl</td>
-                    </tr>
-                    <tr>
-                        <td>Cliente</td>
-                        <td>isso</td>
-                        <td>tá</td>
-                        <td>100%</td>
-                        <td>web</td>
-                        <td>designer</td>
-                    </tr>
-                    <tr>
-                        <td>Gerente</td>
-                        <td>eu</td>
-                        <td>falei</td>
-                        <td>de</td>
-                        <td>três</td>
-                        <td>linhas</td>
-                    </tr>
-                </table>
-				<div id="myModal" class="modal-info">
-					<div class="modal-content-info">
-						<div onclick="fechar();"><span class="close">&times;</span></div>
-						<p id="modalP">Erro!</p>
-					</div>
-				</div>
+                <?php include "banco/consulta-banco.php" ?>
             </div>
         </div>   
     </body>
@@ -300,37 +259,6 @@
     <script>
         function mudarMenuEscolhido() {
             document.getElementById("menu-consulta").className = "ativo";
-        }
-
-        // Informações do Usuário
-        function mensagemErro() {
-            var html = "<div class='centralizar'><table class='w3-table-all infos'>";
-            html += "<tr><th class='cor-th'>Usuário</th><td>" + "</td></tr>";
-            html += "<tr><th class='cor-th'>Nome</th><td>" + "</td></tr>";
-            html += "<tr><th class='cor-th'>CPF</th><td>" + "</td></tr>";
-            html += "<tr><th class='cor-th'>Telefone</th><td>" + "</td></tr>";
-            html += "<tr><th class='cor-th'>E-mail</th><td>" + "</td></tr>";
-            html += "<tr><th class='cor-th'>Data de Aniversário</th><td>" + "</td></tr>";
-            html += "<tr><th class='cor-th'>CEP</th><td>" + "</td></tr>";
-            html += "<tr><th class='cor-th'>Cidade</th><td>" + "</td></tr>";
-            html += "<tr><th class='cor-th'>País</th><td>" + "</td></tr>";
-            html += "<tr><th class='cor-th'>Rua</th><td>" + "</td></tr>";
-            html += "<tr><th class='cor-th'>Número</th><td>" + "</td></tr>";
-            html += "<tr><th class='cor-th'>Complemento</th><td>" + "</td></tr>";
-            html += "</table>";
-            document.getElementById("modalP").innerHTML = html;
-            document.getElementById('myModal').style.display = "block";
-        }
-
-        // Quando o usuário clicar no botão X
-        function fechar () {
-            document.getElementById('myModal').style.display = "none";
-        }
-
-        // Quando o usuário clica em qualquer lugar fora do modal, fecha o modal
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('myModal'))
-                fechar();
         }
     </script>
 </html>

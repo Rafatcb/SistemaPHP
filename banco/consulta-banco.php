@@ -1,6 +1,6 @@
 <?php
     $servername = "localhost";
-    $username = "username";
+    $username = "root";
     $password = "";
     
     try {
@@ -17,23 +17,43 @@
                 <th>Usuário</th>
                 <th>Nome</th>
                 <th>CPF</th>
-                <th>Cidade</th>
+                <th>Aniversário</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
                 <th>País</th>
+                <th>CEP</th>
+                <th>Cidade</th>
+                <th>Bairro</th>
+                <th>Rua</th>
+                <th>Numero</th>
+                <th>Complemento</th>
             </tr>
         </thead>";
-        if ($result->num_rows > 1) {
+        if ($result->rowCount() > 1) {
             $tipo = "";
-            while($row = $result->fetch_assoc()) {
-                if ($row["tipo"] == 1) {
-                    $tipo = "Gerente";
+            while($row = $result->fetch()) {
+                if ($row["usuario"] != "admin") {
+                    if ($row["tipo"] == 1) {
+                        $tipo = "Gerente";
+                    }
+                    else {
+                        $tipo = "Cliente";
+                    }
+                    if ($row["numero"] == 0) {
+                        $numero = "";
+                    }
+                    else {
+                        $numero = $row["numero"];
+                    }
+                    echo "<tr onclick='infoUser()'><td>".$tipo."</td><td>".$row["usuario"]."</td><td>"
+                        .$row["nome"]."</td><td>".$row["cpf"]."</td><td>". date("d/m/Y", strtotime($row["data_aniversario"]))."</td><td>"
+                        .$row["email"]."</td><td>".$row["telefone"]."</td><td>".$row["pais"]."</td><td>"
+                        .$row["cep"]."</td><td>".$row["cidade"]."</td><td>".$row["bairro"]."</td><td>"
+                        .$row["rua"]."</td><td>".$numero."</td><td>".$row["complemento"]."</td></tr>";
                 }
-                else {
-                    $tipo = "Cliente";
-                }
-                echo "<tr><td>".$tipo."</td><td>".$row["usuario"]."</td><td>".$row["nome"]." ".$row["cpf"]."</td><td>".$row["cidade"]."</td><td>".$row["pais"]."</td></tr>";
             }
         } else {
-            // aqui mostra modal "nenhum usuário encontrado" caso tenha clicado no botão de consulta, não onload
+           echo "Nenhum usuário foi encontrado";
         }
         echo "</table>";
         $conn = null;

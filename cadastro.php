@@ -14,9 +14,10 @@
     </head>
     <body onload="mudarMenuEscolhido()">
         <?php include "menu.php"; ?>
+        <?php include "banco/cadastro-banco.php"; ?>
         <div id="cadastro"> 
             <h1>Cadastro</h1>
-            <form name="form" method="post" action="banco/cadastro-banco.php" id="cadastro-form">
+            <form name="form" method="post" action="<?=$_SERVER['PHP_SELF']?>" id="cadastro-form">
                 <fieldset>
                     <legend>Informações Básicas</legend>
                     <div class="linha-cadastro primeira-linha">
@@ -37,25 +38,25 @@
                     <div class="linha-cadastro">
                         <div class="esquerda-dois">
                             <label >Nome <span class="obrigatorio">*</span></label>
-                            <input type="text" name="nome" placeholder="Digite seu nome" class="form-control" maxlength="50"/>
+                            <input type="text" name="nome" placeholder="Nome" class="form-control" maxlength="50"/>
                         </div>
                         <div class="esquerda-dois sem-padding-right">
                             <label>CPF <span class="obrigatorio">*</span></label> 
-                            <input type="text" name="cpf" placeholder="Digite seu CPF" class="form-control" maxlength="14"/>
+                            <input type="text" name="cpf" placeholder="CPF" class="form-control" maxlength="14"/>
                         </div>
                     </div>
                     <div class="linha-cadastro">
                         <div class="esquerda-tres">
                             <label>Telefone</label>
-                            <input type="text" name="telefone" placeholder="Digite seu número de telefone" class="form-control" maxlength="19"/>
+                            <input type="text" name="telefone" placeholder="Telefone" class="form-control" maxlength="19"/>
                         </div>
                         <div class="esquerda-tres">
                             <label>E-mail</label>
-                            <input type="email" name="email" placeholder="Digite seu e-mail" class="form-control" maxlength="40"/>
+                            <input type="email" name="email" placeholder="E-mail" class="form-control" maxlength="40"/>
                         </div>
                         <div class="esquerda-tres sem-padding-right">
                             <label>Data de Aniversário</label>
-                            <input type="date" name="data" placeholder="Digite sua data de aniversário" class="form-control pointer"/>
+                            <input type="date" name="data" class="form-control pointer"/>
                         </div>
                     </div>
                 </fieldset>
@@ -65,11 +66,11 @@
                     <div class="linha-cadastro primeira-linha">
                         <div class="esquerda-tres">
                             <label>CEP</label> 
-                            <input type="text" name="cep" placeholder="Digite seu CEP" class="form-control" maxlength="12"/>
+                            <input type="text" name="cep" placeholder="CEP" class="form-control" maxlength="12"/>
                         </div>
                         <div class="esquerda-tres">
                             <label>Cidade</label> 
-                            <input type="text" name="cidade" placeholder="Digite a cidade" class="form-control" maxlength="40"/>
+                            <input type="text" name="cidade" placeholder="Cidade" class="form-control" maxlength="40"/>
                         </div>
                         <div class="esquerda-tres sem-padding-right">
                             <label>País</label>
@@ -252,17 +253,21 @@
                         </div>
                     </div>
                     <div class="linha-cadastro">
+                        <div class="esquerda-quatro">
+                            <label>Bairro</label>
+                            <input type="text" name="bairro" placeholder="Bairro" class="form-control" maxlength="30"/>
+                        </div>
                         <div class="esquerda-tres">
                             <label>Rua</label> 
-                            <input type="text" name="rua" placeholder="Digite sua rua" class="form-control" maxlength="40"/>
+                            <input type="text" name="rua" placeholder="Rua" class="form-control" maxlength="40"/>
                         </div>
-                        <div class="esquerda-tres">
+                        <div class="esquerda-quatro">
                             <label>Número</label>  
-                            <input type="text" name="numero" placeholder="Digite o numero da residência" class="form-control" maxlength="6"/>
+                            <input type="text" name="numero" placeholder="Número" class="form-control" maxlength="6"/>
                         </div>
-                        <div class="esquerda-tres sem-padding-right">
+                        <div class="esquerda-quatro sem-padding-right">
                             <label>Complemento</label>
-                            <input type="text" name="complemento" placeholder="Digite o complemento" class="form-control" maxlength="30"/>
+                            <input type="text" name="complemento" placeholder="Complemento" class="form-control" maxlength="30"/>
                         </div>
                     </div>
                 </fieldset>
@@ -272,11 +277,11 @@
                     <div class="linha-cadastro primeira-linha">
                         <div class="esquerda-tres">
                             <label>Usuário <span class="obrigatorio">*</span></label> 
-                            <input type="text" name="usuario" placeholder="Digite seu usuário" class="form-control" maxlength="20"/>
+                            <input type="text" name="usuario" placeholder="Usuário" class="form-control" maxlength="20"/>
                         </div>
                         <div class="esquerda-tres">
                             <label>Senha <span class="obrigatorio">*</span></label>
-                            <input type="password" name="senha" placeholder="Digite sua senha" class="form-control" maxlength="20"/>
+                            <input type="password" name="senha" placeholder="Senha" class="form-control" maxlength="20"/>
                         </div>
                         <div class="esquerda-tres sem-padding-right">
                             <label>Confirmar Senha <span class="obrigatorio">*</span></label>

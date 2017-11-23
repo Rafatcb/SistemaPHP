@@ -88,6 +88,12 @@ legend {
     float: left;
 }
 
+.esquerda-quatro {
+    width: 22.2%;
+    padding-right: 1.3%;
+    float: left;
+}
+
 .sem-padding-right {
     padding-right: 0;
 }
