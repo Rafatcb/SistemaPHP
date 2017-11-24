@@ -276,6 +276,17 @@
                         </div>
                     </div>
                 </fieldset>
+
+                <fieldset>
+                    <legend>Confirmar Alterações</legend>
+                    <div class="linha-cadastro primeira-linha">
+                        <p>Para alterar seus dados, é preciso informar a sua senha atual</p>
+                        <div class="width-40">
+                            <label>Senha atual <span class="obrigatorio">*</span></label>
+                            <input type="password" name="senha_atual" placeholder="Senha atual" class="form-control" maxlength="20"/>
+                        </div>
+                    </div>
+                </fieldset>
                 <a href="#" class="botao-a" id="alterar-a">Alterar Dados</a>
             </form>
             <?php include "banco/alterar-banco.php"; ?>

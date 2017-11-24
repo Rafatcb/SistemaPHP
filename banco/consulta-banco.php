@@ -63,13 +63,69 @@
                 if ($aux == 1) {
                     $select .=  "AND ";
                 }
-                $select .=  "usuario LIKE '%" . $usuario . "%'";
+                $select .=  "usuario LIKE '%" . $usuario . "%' ";
                 $aux = 1;
+            }
+            $aux2 = -1;
+            if ((isset($_POST['cliente'])) && (!isset($_POST['gerente']))) {
+                if ($aux == 1) {
+                    $select .=  "AND ";
+                }
+                $select .=  "tipo = 0";
+                $aux = 1;
+                $aux2 = 0;
+            }
+            else if ((isset($_POST['gerente'])) && (!isset($_POST['cliente']))) {
+                if ($aux == 1) {
+                    $select .=  "AND ";
+                }
+                $select .=  "tipo = 1";
+                $aux = 1;
+                $aux2 = 1;
+            } 
+            else if ((!isset($_POST['gerente'])) && (!isset($_POST['cliente']))) {
+                if ($aux == 1) {
+                    $select .=  "AND ";
+                }
+                $select .=  "tipo = 9";
+                $aux = 1;
+                $aux2 = 2;
             }
             if ($aux == 0) {
                 $select = "SELECT * FROM cliente";
             }
             $result = $conn->query($select);
+            $html = '<script type="text/javascript">
+                        document.getElementsByName("nome")[0].value = "' . $nome . '";
+                        document.getElementsByName("cpf")[0].value = "' . $cpf . '";
+                        document.getElementsByName("mes")[0].value = "' . $mes . '";
+                        document.getElementsByName("ano")[0].value = "' . $ano . '";
+                        document.getElementsByName("cidade")[0].value = "' . $cidade . '";
+                        document.getElementsByName("pais")[0].value = "' . $pais . '";
+                        document.getElementsByName("usuario")[0].value = "' . $usuario . '";';
+            switch ($aux2) {
+                case -1: 
+                    $html .= 'document.getElementsByName("gerente")[0].checked = true;';
+                    $html .= 'document.getElementsByName("cliente")[0].checked = true;';
+                    $html .= '</script>';
+                    break;
+                case 0: 
+                    $html .= 'document.getElementsByName("gerente")[0].checked = false;';
+                    $html .= 'document.getElementsByName("cliente")[0].checked = true;';
+                    $html .= 'v</script>';
+                    break;
+                case 1: 
+                    $html .= 'document.getElementsByName("gerente")[0].checked = true;';
+                    $html .= 'document.getElementsByName("cliente")[0].checked = false;';
+                    $html .= '</script>';
+                    break;
+                case 2: 
+                    $html .= 'document.getElementsByName("gerente")[0].checked = false;';
+                    $html .= 'document.getElementsByName("cliente")[0].checked = false;';
+                    $html .= '</script>';
+                    break;
+            }
+            echo $html;
         }
         else {
             $result = $conn->query("SELECT * FROM cliente");

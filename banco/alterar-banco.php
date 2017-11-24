@@ -10,15 +10,72 @@
                 $conn = new PDO("mysql:host=$servername;dbname=trabalho_php", $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $senha = $_POST['senha'];
-                $confirmarSenha = $_POST['confirmar'];
-                if (($senha != null) && ($senha != "")) {
-                    if ($confirmarSenha == $senha) {
+                $result = $conn->query("SELECT senha FROM cliente WHERE usuario='" . $usuario . "'");
+                $row = $result->fetch();
+                $atual = md5($_POST['senha_atual']);
+                if ($row["senha"] == $atual) {
+                    $senha = $_POST['senha'];
+                    $confirmarSenha = $_POST['confirmar'];
+                    if (($senha != null) && ($senha != "")) {
+                        if ($confirmarSenha == $senha) {
+                            $stmt = $conn->prepare("UPDATE cliente SET telefone = :telefone, email = :email, data_aniversario = :dato,
+                                cep = :cep, cidade = :cid, pais = :pais, bairro = :bairro, rua = :rua, numero = :num,
+                                complemento = :com, senha = :senha WHERE usuario = :user");
+                            $senha = md5($senha);
+                            $stmt->bindValue(':senha', $senha);
+                        }
+                        else {
+                            echo '<div id="myModal" class="modal-info">
+                                    <div class="modal-content-info">
+                                        <div onclick="fechar();"><span class="close">&times;</span></div>
+                                        <p id="modalP">Erro!</p>
+                                    </div>
+                                </div>';
+                            echo '<script type="text/javascript">
+                                    var html = "Erro - As senhas informadas são diferentes"
+                                    document.getElementById("modalP").innerHTML = html;
+                                    document.getElementById("myModal").style.display = "block";
+                                </script>';
+                            return;
+                        }
+                    }
+                    else {
                         $stmt = $conn->prepare("UPDATE cliente SET telefone = :telefone, email = :email, data_aniversario = :dato,
-                            cep = :cep, cidade = :cid, pais = :pais, bairro = :bairro, rua = :rua, numero = :num,
-                            complemento = :com, senha = :senha WHERE usuario = :user");
-                        $senha = md5($senha);
-                        $stmt->bindValue(':senha', $senha);
+                        cep = :cep, cidade = :cid, pais = :pais, bairro = :bairro, rua = :rua, numero = :num,
+                        complemento = :com WHERE usuario = :user");
+                    }
+    
+                    $testeData = strtotime($_POST['data']);
+                    $data = null;
+                    if ($testeData != false){
+                        $data = date('Y-m-d', $testeData);
+                    }
+    
+                    $stmt->bindValue(':user', $usuario);
+                    $stmt->bindValue(':telefone', $_POST['telefone']);
+                    $stmt->bindValue(':email', $_POST['email']);
+                    $stmt->bindValue(':dato', $data);
+                    $stmt->bindValue(':cep', $_POST['cep']);
+                    $stmt->bindValue(':cid', $_POST['cidade']);
+                    $stmt->bindValue(':pais', $_POST['pais']);
+                    $stmt->bindValue(':bairro', $_POST['bairro']);
+                    $stmt->bindValue(':rua', $_POST['rua']);
+                    $stmt->bindValue(':num', $_POST['numero']);
+                    $stmt->bindValue(':com', $_POST['complemento']);
+                    $stmt->execute();
+    
+                    if ($stmt->rowCount() == 1) {
+                        echo '<div id="myModal" class="modal-info">
+                                <div class="modal-content-info">
+                                    <div onclick="fechar();"><span class="close">&times;</span></div>
+                                    <p id="modalP">Erro!</p>
+                                </div>
+                            </div>';
+                        echo '<script type="text/javascript">
+                                var html = "Dados alterados com sucesso";
+                                document.getElementById("modalP").innerHTML = html;
+                                document.getElementById("myModal").style.display = "block";
+                            </script>';
                     }
                     else {
                         echo '<div id="myModal" class="modal-info">
@@ -28,39 +85,13 @@
                                 </div>
                             </div>';
                         echo '<script type="text/javascript">
-                                var html = "Erro - As senhas informadas são diferentes"
+                                var html = "Nenhum dado foi alterado";
                                 document.getElementById("modalP").innerHTML = html;
                                 document.getElementById("myModal").style.display = "block";
                             </script>';
-                        return;
                     }
                 }
                 else {
-                    $stmt = $conn->prepare("UPDATE cliente SET telefone = :telefone, email = :email, data_aniversario = :dato,
-                    cep = :cep, cidade = :cid, pais = :pais, bairro = :bairro, rua = :rua, numero = :num,
-                    complemento = :com WHERE usuario = :user");
-                }
-
-                $testeData = strtotime($_POST['data']);
-                $data = null;
-                if ($testeData != false){
-                    $data = date('Y-m-d', $testeData);
-                }
-
-                $stmt->bindValue(':user', $usuario);
-                $stmt->bindValue(':telefone', $_POST['telefone']);
-                $stmt->bindValue(':email', $_POST['email']);
-                $stmt->bindValue(':dato', $data);
-                $stmt->bindValue(':cep', $_POST['cep']);
-                $stmt->bindValue(':cid', $_POST['cidade']);
-                $stmt->bindValue(':pais', $_POST['pais']);
-                $stmt->bindValue(':bairro', $_POST['bairro']);
-                $stmt->bindValue(':rua', $_POST['rua']);
-                $stmt->bindValue(':num', $_POST['numero']);
-                $stmt->bindValue(':com', $_POST['complemento']);
-                $stmt->execute();
-
-                if ($stmt->rowCount() == 1) {
                     echo '<div id="myModal" class="modal-info">
                             <div class="modal-content-info">
                                 <div onclick="fechar();"><span class="close">&times;</span></div>
@@ -68,20 +99,7 @@
                             </div>
                         </div>';
                     echo '<script type="text/javascript">
-                            var html = "Dados alterados com sucesso";
-                            document.getElementById("modalP").innerHTML = html;
-                            document.getElementById("myModal").style.display = "block";
-                        </script>';
-                }
-                else {
-                    echo '<div id="myModal" class="modal-info">
-                            <div class="modal-content-info">
-                                <div onclick="fechar();"><span class="close">&times;</span></div>
-                                <p id="modalP">Erro!</p>
-                            </div>
-                        </div>';
-                    echo '<script type="text/javascript">
-                            var html = "Ops! Algum problema ocorreu. Nenhum dado foi alterado";
+                            var html = "Senha inválida! Nenhum dado foi alterado";
                             document.getElementById("modalP").innerHTML = html;
                             document.getElementById("myModal").style.display = "block";
                         </script>';

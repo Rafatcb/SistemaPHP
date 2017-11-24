@@ -19,11 +19,11 @@
             <form name="form" method="post" action="<?=$_SERVER['PHP_SELF']?>" id="consulta-form">
                 <div id="linha-filtros">
                     <label class="control control--checkbox pointer" for="cliente" onclick="tiraFocoCheckbox()">Cliente
-                        <input type="checkbox" id="cliente" name="tipo" value="cliente" checked="checked" class="pointer">
+                        <input type="checkbox" id="cliente" name="cliente" value="cliente" checked="checked" class="pointer">
                         <div class="control__indicator"></div>
                     </label>
                     <label class="control control--checkbox pointer" for="gerente" onclick="tiraFocoCheckbox()">Gerente
-                        <input type="checkbox" id="gerente" name="tipo" value="gerente" checked="checked" class="pointer">
+                        <input type="checkbox" id="gerente" name="gerente" value="gerente" checked="checked" class="pointer">
                         <div class="control__indicator"></div>
                     </label>
                 </div>   
