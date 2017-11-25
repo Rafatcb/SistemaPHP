@@ -1,0 +1,4 @@
+Escreva seu ServerName Usuario e Senha do MySql/MariaDB nos campos indicados.(Sem espaco apos ":")
+ServerName:localhost
+Usuario:root
+Senha:

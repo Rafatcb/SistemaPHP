@@ -1,8 +1,8 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    
+    include "lerDadosBanco.php";
+    $servername = retornaDado(1);
+    $username = retornaDado(2);
+    $password = retornaDado(3);
     try {
         $conn = new PDO("mysql:host=$servername;dbname=trabalho_php", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

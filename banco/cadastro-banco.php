@@ -7,10 +7,11 @@
                 </div>
             </div>';
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        
+        include "lerDadosBanco.php";
+        $servername = retornaDado(1);
+        $username = retornaDado(2);
+        $password = retornaDado(3);
+    
         $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
         $confirmarSenha = $_POST['confirmar'];

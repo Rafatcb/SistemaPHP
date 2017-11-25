@@ -1,7 +1,8 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
+    include "lerDadosBanco.php";
+    $servername = retornaDado(1);
+    $username = retornaDado(2);
+    $password = retornaDado(3);
     
     $usuario = "rafatcb"; // AQUI FICA O USUÁRIO LOGADO PELA SESSION
 
