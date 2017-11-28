@@ -82,6 +82,7 @@
                 VALUES ('admin', 'admin', 'Admin', '1');";
         $conn->exec($sql);
         $conn = null;
+        echo "Banco criado com sucesso";
     }
     catch(PDOException $e){
         echo "Conexão com o banco de dados não estabelecida: " . $e->getMessage();
