@@ -1,7 +1,7 @@
 <?php
 	
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	include "lerDadosBanco.php";
+	include __DIR__ . "\\lerDadosBanco.php";
 	$servername = retornaDado(1);
 	$username = retornaDado(2);
 	$password = retornaDado(3);
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$_SESSION['tipo'] = 1;
 			$_SESSION['usuario'] = $row["usuario"];
 			$_SESSION['senha'] = $row["senha"];
-			header("Location: ../cadastro.php");
+			header("Location: ../SistemaPHP/cadastro.php");
 			exit;
 		}
 		else{
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$_SESSION['tipo'] = 0;
 			$_SESSION['usuario'] = $row["usuario"];
 			$_SESSION['senha'] = $row["senha"];
-			header("Location: ../consulta.php");
+			header("Location: ../SistemaPHP/consulta.php");
 			exit;
 		}
 		echo "$tipo";

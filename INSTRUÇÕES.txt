@@ -1,3 +1,4 @@
-1. Acessa a pasta "banco", abra o arquivo "Login do Banco.txt" e informe o nome do servidor, usuário e senha para acesso ao banco de dados.
-2. Execute o arquivo "criar-banco.php" (na mesma pasta "banco") para a criação do banco com todas as tabelas. Caso tenha sido criado, exibirá uma mensagem "Banco criado com sucesso", caso contrário, aparecerá a mensagem de erro correspondente.
-3. ABRIR LOGINNNNNNNNNNNNN
+1. Cole a pasta "SistemaPHP" dentro do diretório C:\xampp\htdocs\
+2. Acessa a pasta "banco", abra o arquivo "Login do Banco.txt" e informe o nome do servidor, usuário e senha para acesso ao banco de dados.
+3. Abra o arquivo "criar-banco.php" (na mesma pasta "banco") para a criação do banco com todas as tabelas. Caso tenha sido criado, exibirá uma mensagem "Banco criado com sucesso", caso contrário, aparecerá a mensagem de erro correspondente.
+4. Abra a página "index.php" dentro da pasta C:\xampp\htdoc\ para iniciar o acesso ao sistema.
