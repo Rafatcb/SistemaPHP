@@ -300,30 +300,29 @@ session_start();
             </form>
             <?php include "banco/cadastro-banco.php"; ?>
         </div>
+        <script>
+            function mudarMenuEscolhido() {
+                document.getElementById("menu-cadastro").className = "ativo";
+            }
+            
+            function seleciona(id) {
+                document.getElementById(id).checked = true;
+            }
+
+            document.getElementById("cadastro-a").onclick = function() {
+                document.getElementById("cadastro-form").submit();
+            }
+
+            // Quando o usuário clicar no botão X
+            function fechar () {
+                document.getElementById('myModal').style.display = "none";
+            }
+
+            // Quando o usuário clica em qualquer lugar fora do modal, fecha o modal
+            window.onclick = function(event) {
+                if (event.target == document.getElementById('myModal'))
+                    fechar();
+            }
+        </script>
     </body>
-
-    <script>
-        function mudarMenuEscolhido() {
-            document.getElementById("menu-cadastro").className = "ativo";
-        }
-        
-        function seleciona(id) {
-            document.getElementById(id).checked = true;
-        }
-
-        document.getElementById("cadastro-a").onclick = function() {
-            document.getElementById("cadastro-form").submit();
-        }
-
-        // Quando o usuário clicar no botão X
-        function fechar () {
-            document.getElementById('myModal').style.display = "none";
-        }
-
-        // Quando o usuário clica em qualquer lugar fora do modal, fecha o modal
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('myModal'))
-                fechar();
-        }
-    </script>
 </html>

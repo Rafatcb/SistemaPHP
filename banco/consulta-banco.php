@@ -134,7 +134,6 @@
         if ($result->rowCount() > 0) {
             $tipo = "";
             echo "<table class='w3-table-all lista'>
-            <tthead>
                 <tr class='cor-th'>
                     <th>Tipo</th>
                     <th>Usuário</th>
@@ -150,8 +149,7 @@
                     <th>Rua</th>
                     <th>Numero</th>
                     <th>Complemento</th>
-                </tr>
-            </thead>";
+                </tr>";
             while($row = $result->fetch()) {
                 if ($row["usuario"] != "admin") {
                     if ($row["tipo"] == 1) {

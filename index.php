@@ -40,17 +40,17 @@ session_start();
 		</form>
 		<?php include "banco/validaLogin.php" ?>
 	</div>	
-</body>	
-<script>
-	// Quando o usuário clicar no botão X
-	function fechar () {
-			document.getElementById('myModal').style.display = "none";
-	}
+	<script>
+		// Quando o usuário clicar no botão X
+		function fechar () {
+				document.getElementById('myModal').style.display = "none";
+		}
 
-	// Quando o usuário clica em qualquer lugar fora do modal, fecha o modal
-	window.onclick = function(event) {
-			if (event.target == document.getElementById('myModal'))
-					fechar();
-	}
-</script>
+		// Quando o usuário clica em qualquer lugar fora do modal, fecha o modal
+		window.onclick = function(event) {
+				if (event.target == document.getElementById('myModal'))
+						fechar();
+		}
+	</script>
+</body>	
 </html>

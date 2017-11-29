@@ -30,7 +30,6 @@ body {
   text-align: center;
   line-height: 44px;
   transition: all 0.3s ease-out;
-  pointer-events: none;
 }
 
 /* === Login styles === */
