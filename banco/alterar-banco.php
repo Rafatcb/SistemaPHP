@@ -1,10 +1,11 @@
 <?php
+	session_start();
     include "lerDadosBanco.php";
     $servername = retornaDado(1);
     $username = retornaDado(2);
     $password = retornaDado(3);
     
-    $usuario = "rafatcb"; // AQUI FICA O USUÁRIO LOGADO PELA SESSION
+    $usuario = $_SESSION['usuario'];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {

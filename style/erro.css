@@ -1,0 +1,27 @@
+html{
+	height: 100%;
+	width: 100%;
+    background-image: url("longeDemais.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+	overflow: hidden;
+}
+
+div{
+	text-align: center;
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+h1, p{
+	font-family: 'Nunito', sans-serif;
+	color: #fff;
+	text-shadow: 1px 1px #6d6d6d;
+}
+h1{
+	font-size: 35px;
+}
+
+p{
+	font-size: 23px;
+}

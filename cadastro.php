@@ -1,3 +1,10 @@
+<?php
+session_start();
+		if ($_SESSION['tipo'] != 1) {
+			header("Location: erro.php");
+			exit;
+		}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>

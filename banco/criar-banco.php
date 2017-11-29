@@ -78,8 +78,9 @@
 
         $conn = new PDO("mysql:host=$servername;dbname=trabalho_php", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$senhamd5 = md5("admin");
         $sql = " INSERT INTO cliente (usuario, senha, nome, tipo)
-                VALUES ('admin', 'admin', 'Admin', '1');";
+                VALUES ('admin', '$senhamd5', 'Admin', '1');";
         $conn->exec($sql);
         $conn = null;
         echo "Banco criado com sucesso";

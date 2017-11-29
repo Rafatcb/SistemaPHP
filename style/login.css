@@ -1,0 +1,126 @@
+/*still in the works :P*/
+/*variables*/
+/*general style*/
+/*google font*/
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700)";
+body {
+  font: 13px/20px "Open Sans", Tahoma, Verdana, sans-serif;
+  color: #a7a599;
+  background: #31302b;
+}
+
+/* === Form === */
+.form {
+  width: 100%;
+}
+.form .field {
+  position: relative;
+  margin: 0 50px;
+}
+
+.form .field i {
+  font-size: 18px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  height: 44px;
+  width: 44px;
+  color: #f7f3eb;
+  background: #676056;
+  text-align: center;
+  line-height: 44px;
+  transition: all 0.3s ease-out;
+  pointer-events: none;
+}
+
+/* === Login styles === */
+.login {
+  position: relative;
+  margin:  25vh auto;
+  width: 370px;
+  height: 315px;
+  background: white;
+  border-radius: 3px;
+}
+.login:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+.login h1 {
+  line-height: 55px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  background: #3498DB;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.login .submit {
+  text-align: center;
+}
+.login p:first-child {
+  margin-top: 30px;
+}
+
+/*input style*/
+/* === Input Form === */
+::-webkit-input-placeholder {
+  color: #ded9cf;
+  font-family: 'Open Sans';
+}
+
+:-moz-placeholder {
+  color: #ded9cf !important;
+  font-family: 'Open Sans';
+}
+
+.form input[type=text], input[type=password] {
+  font-family: 'Open Sans', Calibri, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 15px 10px 55px;
+  position: relative;
+  width: 200px;
+  height: 24px;
+  color: #676056;
+  border: none;
+  background: #f7f3eb;
+  color: #777;
+  transition: color 0.3s ease-out;
+}
+
+.form input[type=text] {
+  margin-bottom: 15px;
+}
+
+.form input[type=submit] {
+  margin-top: 15px;
+  width: 270px;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: bold;
+  padding: 12px 0;
+  letter-spacing: 0;
+  box-shadow: inset 0px 0px 0px 0px #3498DB;
+  color: #fff;
+  background-color: #3498DB;
+  text-shadow: none;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 20px;
+  -webkit-animation: shadowFadeOut 0.4s;
+  -moz-animation: shadowFadeOut 0.4s;
+}
