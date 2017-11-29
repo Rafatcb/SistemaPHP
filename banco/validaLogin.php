@@ -15,7 +15,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$result = $conn->query("SELECT * FROM cliente WHERE usuario = '$usuario' and senha = '".md5($senha)."'");
 	
 	if ($result->rowCount() == 0) {
-		echo 'Usuario nao existe carai';
+		echo '<div id="myModal" class="modal-info">
+				<div class="modal-content-info">
+					<div onclick="fechar();"><span class="close">&times;</span></div>
+					<p id="modalP">Erro!</p>
+				</div>
+			</div>';
+		echo '<script type="text/javascript">
+				var html = "Erro - Usuário e/ou senha inválidos"
+				document.getElementById("modalP").innerHTML = html;
+				document.getElementById("myModal").style.display = "block";
+			</script>';
 	}
 	else {
 		$row = $result->fetch();

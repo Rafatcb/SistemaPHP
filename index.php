@@ -24,7 +24,7 @@ session_start();
 	<div class="login">
 		<h1>Entre</h1>
 		
-		<form class="form" method="post" action="banco/validaLogin.php">
+		<form class="form" method="post" action="<?=$_SERVER['PHP_SELF']?>">
 
 		  <p class="field">
 			<input type="text" name="usuario" placeholder="Usuário" required/>
@@ -38,6 +38,19 @@ session_start();
 
 		  <p class="submit"><input type="submit" name="entrar" value="Entrar"></p>
 		</form>
+		<?php include "banco/validaLogin.php" ?>
 	</div>	
 </body>	
+<script>
+	// Quando o usuário clicar no botão X
+	function fechar () {
+			document.getElementById('myModal').style.display = "none";
+	}
+
+	// Quando o usuário clica em qualquer lugar fora do modal, fecha o modal
+	window.onclick = function(event) {
+			if (event.target == document.getElementById('myModal'))
+					fechar();
+	}
+</script>
 </html>
