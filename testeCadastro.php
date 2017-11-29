@@ -1,0 +1,1 @@
+<li class="menuItem"><a href="testeCadastro.php" id="menu-cadastro">Cadastro</a></li>

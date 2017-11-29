@@ -1,6 +1,6 @@
 <?php
 session_start();
-		if ($_SESSION['tipo'] != 1) {
+		if ($_SESSION['tipo'] != 1 || isset($_SESSION['tipo']) == false) {
 			header("Location: erro.php");
 			exit;
 		}

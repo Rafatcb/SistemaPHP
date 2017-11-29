@@ -1,6 +1,7 @@
 <?php
 session_start();
-	if ($_SESSION['tipo'] == 1) {
+	if (isset($_SESSION['tipo']) == false){}
+	else if ($_SESSION['tipo'] == 1) {
 		header("Location: cadastro.php");
 		exit;
 	}

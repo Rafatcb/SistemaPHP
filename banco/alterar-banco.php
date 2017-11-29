@@ -1,5 +1,4 @@
 <?php
-	session_start();
     include "lerDadosBanco.php";
     $servername = retornaDado(1);
     $username = retornaDado(2);
