@@ -124,3 +124,20 @@ body {
   -webkit-animation: shadowFadeOut 0.4s;
   -moz-animation: shadowFadeOut 0.4s;
 }
+
+.popup{
+	position: fixed;
+	top: 0; bottom: 0; 
+	left: 0; right:0;
+	margin: auto;
+	width: 500px;
+	height: 450px;
+	padding: 15px;
+	padding-top: 0px;
+	border: solid 1px #DDDDDD;
+	background: #ffffff;
+	border-radius:8px;
+	display: none;
+	z-index:1;
+	overflow: auto;
+}

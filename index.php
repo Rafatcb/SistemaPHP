@@ -21,23 +21,23 @@ session_start();
 </head>
 
 <body>
-  <div class="login">
-    <h1>Entre</h1>
-	
-    <form class="form" method="post" action="banco/validaLogin.php">
+	<div class="login">
+		<h1>Entre</h1>
+		
+		<form class="form" method="post" action="banco/validaLogin.php">
 
-      <p class="field">
-        <input type="text" name="usuario" placeholder="Usuário" required/>
-        <i class="fa fa-user"></i>
-      </p>
+		  <p class="field">
+			<input type="text" name="usuario" placeholder="Usuário" required/>
+			<i class="fa fa-user"></i>
+		  </p>
 
-      <p class="field">
-        <input type="password" name="senha" placeholder="Senha" required/>
-        <i class="fa fa-lock"></i>
-      </p>
+		  <p class="field">
+			<input type="password" name="senha" placeholder="Senha" required/>
+			<i class="fa fa-lock"></i>
+		  </p>
 
-      <p class="submit"><input type="submit" name="entrar" value="Entrar"></p>
-    </form>
-  </div>
+		  <p class="submit"><input type="submit" name="entrar" value="Entrar"></p>
+		</form>
+	</div>	
 </body>	
 </html>

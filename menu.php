@@ -1,10 +1,10 @@
 <ul class="menu">
-	<li class="menuItem"><a href="consulta.php" id="menu-consulta">Consulta</a></li>
 	<?php
 		if($_SESSION['tipo'] == 1){
 			include "testeCadastro.php";
 		}
 	?>
+	<li class="menuItem"><a href="consulta.php" id="menu-consulta">Consulta</a></li>
     <li style="float:right"  class="dropdown">
         <a href="#" class="dropbtn" id="menu-conta"><span class="glyphicon glyphicon-user"></span>&nbsp&nbsp Minha Conta</a>
         <div class="dropdown-conteudo">

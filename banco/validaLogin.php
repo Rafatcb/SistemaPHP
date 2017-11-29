@@ -1,10 +1,6 @@
 <?php
 	session_start();
-	if ($_SESSION['tipo'] == 1) {
-		header("Location: erro.php");
-		exit;
-	}
-
+	
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	include "lerDadosBanco.php";
 	$servername = retornaDado(1);
@@ -19,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$result = $conn->query("SELECT * FROM cliente WHERE usuario = '$usuario' and senha = '".md5($senha)."'");
 	
 	if ($result->rowCount() == 0) {
-		echo '';
+		echo 'Usuario nao existe carai';
 	}
 	else {
 		$row = $result->fetch();
