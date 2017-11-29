@@ -27,41 +27,66 @@
                 $result = $conn->query("SELECT * FROM cliente WHERE cpf = '$cpf' ");
 
                 if ($result->rowCount() == 0) {
+                    $aux = 1;
+                    $result = $conn->query("SELECT * FROM cliente WHERE usuario = '$usuario' ");
+                    if ($result->rowCount() != 0) {
+                        echo '<script type="text/javascript">
+                                var html = "Erro - Este Usuário já está cadastrado, com um CPF diferente";
+                                document.getElementById("modalP").innerHTML = html;
+                                document.getElementById("myModal").style.display = "block";
+                            </script>';
+                    }
                     $stmt = $conn->prepare("INSERT INTO cliente (nome, data_aniversario, cpf, usuario, senha, telefone, email, rua, 
                         numero, bairro, complemento, cidade, cep, pais, tipo)
                     VALUES (:nome,:dato,:cpf,:usuario,:senha,:tel,:email,:rua,:num,:bairro,:comp,:cid,:cep,:pais,:tipo)");
-            
-                    if ($_POST['tipo'] == "cliente") {
-                        $tipo = 0;
-                    }
-                    else {
-                        $tipo = 1;
-                    }
                     
-                    $testeData = strtotime($_POST['data']);
-                    $data = null;
-                    if ($testeData != false){
-                        $data = date('Y-m-d', $testeData);
+                }
+                else {
+                    $aux = 0;
+                    $result = $conn->query("SELECT * FROM cliente WHERE usuario = '$usuario' ");
+                    if ($result->rowCount() != 0) {
+                        echo '<script type="text/javascript">
+                                var html = "Erro - Este Usuário já está cadastrado, com um CPF diferente";
+                                document.getElementById("modalP").innerHTML = html;
+                                document.getElementById("myModal").style.display = "block";
+                            </script>';
                     }
-            
-                    $senha = md5($senha);
-                    $stmt->bindParam(':nome', $nome);
-                    $stmt->bindParam(':dato', $data);
-                    $stmt->bindParam(':cpf', $cpf);
-                    $stmt->bindParam(':usuario', $usuario);
-                    $stmt->bindParam(':senha', $senha);
-                    $stmt->bindParam(':tel', $_POST['telefone']);
-                    $stmt->bindParam(':email', $_POST['email']);
-                    $stmt->bindParam(':rua', $_POST['rua']);
-                    $stmt->bindParam(':num', $_POST['numero']);
-                    $stmt->bindParam(':bairro', $_POST['bairro']);
-                    $stmt->bindParam(':comp', $_POST['complemento']);
-                    $stmt->bindParam(':cid', $_POST['cidade']);
-                    $stmt->bindParam(':cep', $_POST['cep']);
-                    $stmt->bindParam(':pais', $_POST['pais']);
-                    $stmt->bindParam(':tipo', $tipo);
-
-                    $stmt->execute();
+                    $stmt = $conn->prepare("UPDATE cliente SET telefone = :tel, email = :email, data_aniversario = :dato,
+                    cep = :cep, cidade = :cid, pais = :pais, bairro = :bairro, rua = :rua, numero = :num,
+                    complemento = :comp, senha = :senha, nome = :nome, tipo = :tipo, usuario = :usuario WHERE cpf = :cpf");
+                }
+                if ($_POST['tipo'] == "cliente") {
+                    $tipo = 0;
+                }
+                else {
+                    $tipo = 1;
+                }
+                
+                $testeData = strtotime($_POST['data']);
+                $data = null;
+                if ($testeData != false){
+                    $data = date('Y-m-d', $testeData);
+                }
+        
+                $senha = md5($senha);
+                $stmt->bindParam(':cpf', $cpf);
+                $stmt->bindParam(':nome', $nome);
+                $stmt->bindParam(':dato', $data);
+                $stmt->bindParam(':usuario', $usuario);
+                $stmt->bindParam(':senha', $senha);
+                $stmt->bindParam(':tel', $_POST['telefone']);
+                $stmt->bindParam(':email', $_POST['email']);
+                $stmt->bindParam(':rua', $_POST['rua']);
+                $stmt->bindParam(':num', $_POST['numero']);
+                $stmt->bindParam(':bairro', $_POST['bairro']);
+                $stmt->bindParam(':comp', $_POST['complemento']);
+                $stmt->bindParam(':cid', $_POST['cidade']);
+                $stmt->bindParam(':cep', $_POST['cep']);
+                $stmt->bindParam(':pais', $_POST['pais']);
+                $stmt->bindParam(':tipo', $tipo);
+                echo "ué" .$stmt->fetch(\PDO::FETCH_ASSOC);
+                $stmt->execute();
+                if ($aux == 1) {
                     echo '<script type="text/javascript">
                             var html = "Usuário cadastrado com sucesso";
                             document.getElementById("modalP").innerHTML = html;
@@ -70,12 +95,11 @@
                 }
                 else {
                     echo '<script type="text/javascript">
-                            var html = "Erro - Usuário já cadastrado";
+                            var html = "Usuário alterado com sucesso";
                             document.getElementById("modalP").innerHTML = html;
                             document.getElementById("myModal").style.display = "block";
                         </script>';
                 }
-                
                 $conn = null;
             }
             catch(PDOException $e){
