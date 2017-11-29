@@ -1,0 +1,4 @@
+A base de dados utilizada foi MariaDB, e como interface foi utilizado o phpMyAdmin.
+Nós montamos o banco de dados com uma única tabela, contendo tanto as informações relativas a clientes como a administradores.
+Como chave primária deixamos "usuário", e embora cpf não seja nossa chave primária, utilizamos ela como chave secundária para pesquisas.
+Para diferenciar um cliente de um gerente colocamos uma variável "tipo".
